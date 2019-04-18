@@ -3,7 +3,30 @@ from matrix import *
 from gmath import *
 
 def scanline_convert(polygons, i, screen, zbuffer ):
-    pass
+    #fills in the triangles with horizontal lines
+
+    #generate random color for the triangle
+    color = [255,random.randint(0,255),random.randint(0,255)]
+
+    #determine bottom top and middle vertices
+    bottom = polygons[i]
+    bx = bottom[0]
+    by = bottom[1]
+    bz = bottom[2]
+    
+    middle = polygons[i+1]
+    mx = middle[0]
+    my = middle[1]
+    mz = middle[2]
+    
+    top = polygons[i+2]
+    tx = top[0]
+    ty = top[1]
+    tz = top[2]
+
+    x0, x1  = bx
+    
+    #compute endpoints for each scanline
 
 def add_polygon( polygons, x0, y0, z0, x1, y1, z1, x2, y2, z2 ):
     add_point(polygons, x0, y0, z0)
